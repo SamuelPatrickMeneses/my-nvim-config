@@ -48,19 +48,24 @@ let g:AutoPairsFlyMode = 0
 " autocomplite
 "" ale with ccls
 
-#let g:ale_completion_enabled = 1
-#map <M-w> :ALEGoToDefinition  <cr>
-#map <M-r> :ALEFindReferences  <cr> 
-#map <M-z> :ALESymbolSearch 
-#map <M-h> :ALEHover<cr>
-#map <M-i> :ALEGoToImplementation <cr>
+"let g:ale_completion_enabled = 1
+"map <M-w> :ALEGoToDefinition  <cr>
+"map <M-r> :ALEFindReferences  <cr> 
+"map <M-z> :ALESymbolSearch 
+"map <M-h> :ALEHover<cr>
+"map <M-i> :ALEGoToImplementation <cr>
 
- map <M-w>  <Plug>(coc-definition)
- map <M-r>  <Plug>(coc-references-used)
- map <M-z>  :CocList symbols
- map <M-h>  <Plug>(coc-type-definition)
- map <M-i>  <Plug>(coc-references)
-  #<Plug>(coc-declaration)
+map <M-w>  <Plug>(coc-definition)
+map <M-r>  <Plug>(coc-references-used)
+map <M-d>  <Plug>(coc-declaration)
+map <M-l>  :CocList symbols <CR>
+imap <M-l>  :CocList symbols <CR>
+map <M-z>  :CocList references <CR>
+imap <M-z>  :CocList references<CR>
+map <M-t>  <Plug>(coc-type-definition)
+map <M-i>  <Plug>(coc-implementation)
+inoremap <silent><expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+  "<Plug>(coc-declaration)
 "" ale lint warnes
 "let g:ale_echo_cursor = 1
 "let g:ale_virtualtext_cursor = 1
