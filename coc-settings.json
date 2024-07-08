@@ -1,3 +1,28 @@
 {
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/17.0.3/clangd_17.0.3/bin/clangd"
+  "semanticTokens.enable": true,
+  "semanticTokens.highlightPriority" : 1,
+  "coc.preferences.enableLinkedEditing": true,
+  "colors.enable": false,
+  "languageserver": {
+     "ccls": {
+         "command": "ccls",
+         "filetypes": ["c", "cpp", "objc", "objcpp", "h", "hpp"],
+         "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+         "initializationOptions": {
+            "cache": {
+              "directory": "${cwd}/.ccls-cache"
+            },
+            "clang": {
+                "extraArgs": [
+                    "-I",
+                    "${cwd}/include",
+                    "-I",
+                    "${cwd}/src",
+                    "-D",
+                    "__linux__"
+                ]
+            }
+        }
+     }
+  }
 }
