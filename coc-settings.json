@@ -4,6 +4,19 @@
   "coc.preferences.enableLinkedEditing": true,
   "colors.enable": false,
   "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+      "filetypes": ["haskell", "lhaskell"],
+      "initializationOptions": {
+        "languageServerHaskell": {
+          "hlintOn": true,
+          "maxNumberOfProblems": 100,
+          "semanticTokens": true
+        }
+      }
+    },
      "ccls": {
          "command": "ccls",
          "filetypes": ["c", "cpp", "objc", "objcpp", "h", "hpp"],
@@ -24,5 +37,6 @@
             }
         }
      }
-  }
+  },
+  "haskell.semanticTokens": true
 }
