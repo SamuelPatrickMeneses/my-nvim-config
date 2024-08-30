@@ -11,6 +11,7 @@ call plug#begin()
     Plug 'jiangmiao/auto-pairs' " for (), [], {}, <>, ''...
     "Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc-tsserver'
     "Plug 'ycm-core/YouCompleteMe' " for symbles
 
 "" snippets
@@ -64,7 +65,7 @@ map <M-z>  :CocList references <CR>
 imap <M-z>  :CocList references<CR>
 map <M-t>  <Plug>(coc-type-definition)
 map <M-i>  <Plug>(coc-implementation)
-inoremap <silent><expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
   "<Plug>(coc-declaration)
 "" ale lint warnes
 "let g:ale_echo_cursor = 1
