@@ -31,6 +31,7 @@
                     "${cwd}/include",
                     "-I",
                     "${cwd}/src",
+                    "-std=c++17",
                     "-D",
                     "__linux__"
                 ]
