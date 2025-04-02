@@ -63,9 +63,22 @@ map <M-l>  :CocList symbols <CR>
 imap <M-l>  :CocList symbols <CR>
 map <M-z>  :CocList references <CR>
 imap <M-z>  :CocList references<CR>
-map <M-t>  <Plug>(coc-type-definition)
+"map <M-t>  <Plug>(coc-type-definition)
 map <M-i>  <Plug>(coc-implementation)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+
+" Abrir uma nova aba e iniciar um terminal com Alt+T
+"nnoremap <M-t> :tabnew | terminal <CR>
+" Abrir uma nova aba e iniciar um terminal com Alt+T
+function! AbrirTerminal()
+    execute "tabnew"
+    execute "terminal"
+endfunction
+
+nnoremap <M-t> :call AbrirTerminal()<CR>
+inoremap <M-t> <Esc>:call AbrirTerminal()<CR>
+
   "<Plug>(coc-declaration)
 "" ale lint warnes
 "let g:ale_echo_cursor = 1

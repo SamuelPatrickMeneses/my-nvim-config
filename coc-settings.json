@@ -28,9 +28,7 @@
             "clang": {
                 "extraArgs": [
                     "-I",
-                    "${cwd}/include",
-                    "-I",
-                    "${cwd}/src",
+                    "${cwd}",
                     "-std=c++17",
                     "-D",
                     "__linux__"
