@@ -12,6 +12,7 @@ call plug#begin()
     "Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-tsserver'
+    Plug 'fannheyward/coc-pyright'
     "Plug 'ycm-core/YouCompleteMe' " for symbles
 
 "" snippets
