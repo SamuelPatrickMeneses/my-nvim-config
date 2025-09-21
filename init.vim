@@ -9,17 +9,14 @@ call plug#begin()
     Plug 'sakhnik/nvim-gdb'
 " auto complite
     Plug 'jiangmiao/auto-pairs' " for (), [], {}, <>, ''...
-    "Plug 'dense-analysis/ale'
+    Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-tsserver'
+    Plug 'neoclide/coc-java'
+    Plug 'dansomething/coc-groovy'
     Plug 'fannheyward/coc-pyright'
-    "Plug 'ycm-core/YouCompleteMe' " for symbles
-
-"" snippets
-"    Plug 'SirVer/ultisnips'
-"    Plug 'honza/vim-snippets'
-"    Plug 'ervandew/supertab'
-
+    Plug 'SirVer/ultisnips'
+    Plug 'neoclide/coc-snippets'
     Plug 'preservim/nerdtree'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -80,6 +77,30 @@ endfunction
 nnoremap <M-t> :call AbrirTerminal()<CR>
 inoremap <M-t> <Esc>:call AbrirTerminal()<CR>
 
+" Ativar Ale para PHP
+let g:ale_linters = {
+\   'php': ['intelephense', 'phpstan'],
+\}
+
+" Configurações específicas do PHPStan
+let g:ale_php_phpstan_executable = './vendor/bin/phpstan'
+let g:ale_php_phpstan_level = '8'
+let g:ale_php_phpstan_configuration = 'phpstan.neon'
+let g:ale_php_phpstan_autoload = './vendor/autoload.php'
+
+" Configurações específicas do intelephense
+let g:ale_php_intelephense_use_global = 1
+
+"Mostrar erros na linha
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+" Atualizar enquanto digita (opcional)
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_enabled = 0
   "<Plug>(coc-declaration)
 "" ale lint warnes
 "let g:ale_echo_cursor = 1
