@@ -31,9 +31,7 @@
                     "${cwd}",
                     "-std=c++17",
                     "-D",
-                    "__linux__",
-                    "-I",
-                    "/home/samuel/extra/intel/oneapi/2025.2/include/"
+                    "__linux__"
                 ]
             }
         }
