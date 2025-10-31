@@ -12,6 +12,14 @@ cp -r ./init.vim ./install.sh ./coc-settings.json $NEOVIM_CONFIG
 #install node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 nvm install
+npm i intelephense -g
+
+# install eclip
+sudo apt install xclip -y
+
+# make Tab auto-completion case-insensitive in Bash?
+if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+echo "echo 'set completion-ignore-case On' >> ~/.inputrc" > ~/.bashrc
 
 #nvim install
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
