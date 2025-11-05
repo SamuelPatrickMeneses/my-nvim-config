@@ -22,6 +22,11 @@ source ~/.bashrc
 nvm install
 npm i intelephense -g
 
+#bash config 
+
+echo "source $NEOVIM_CONFIG/.my_nvimrc > /dev/null" >> ~/.bashrc
+source ~/.bashrc
+
 # install eclip
 sudo apt install xclip -y
 
@@ -30,22 +35,15 @@ sudo apt install python3
 pip install pynvim
 
 
-# make Tab auto-completion case-insensitive in Bash?
-if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' >> ~/.inputrc; fi
-echo "echo 'set completion-ignore-case On' >> ~/.inputrc" >> ~/.bashrc
-
 #nvim install
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo tar -C $NEOVIM_HOME -xzf nvim-linux-x86_64.tar.gz
 
-echo 'export PATH="$PATH:~/.neovim/nvim-linux64/bin"' >> ~/.bashrc
-echo 'alias v=nvim' >> ~/.bashrc
-source ~/.bashrc
 
 # install VimPlug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-sudo chmod -R 777 $NEOVIM_HOME $NEOVIM_CONFIG 
 sudo chown -R $CURRENT_USER:$CURRENT_USER $NEOVIM_HOME $NEOVIM_CONFIG
+
 $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim -c PlugInstall
