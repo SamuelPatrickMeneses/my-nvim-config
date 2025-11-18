@@ -2,7 +2,7 @@
 
 git config --global user.name "SamuelPatrickMeneses"
 git config --global user.email "samuelmeneses800@gmail.com"
-
+git config --global commit.template ./.gittemplate
 
 NEOVIM_HOME=~/.neovim
 NEOVIM_CONFIG=~/.config/nvim
