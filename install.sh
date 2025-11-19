@@ -12,7 +12,7 @@ chmod -R 777 $NEOVIM_HOME $NEOVIM_CONFIG
 cp -r ./init.vim ./install.sh ./coc-settings.json .my_nvimrc .gittemplate $NEOVIM_CONFIG 
 
 #install node
-if [ -z $MY_NVIMRC ]; then
+if [ -z $NVM_DIR ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
     source ~/.bashrc
     nvm install
@@ -31,7 +31,7 @@ pip install pynvim
 
 
 #nvim install
-if [[ ! -f $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim ]]
+if [[ ! -f "$NEOVIM_HOME/nvim-linux-x86_64/bin/nvim" ]]; then
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
     tar -C $NEOVIM_HOME -xzf nvim-linux-x86_64.tar.gz
 fi
