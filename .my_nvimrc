@@ -2,7 +2,18 @@
 if [ -z $MY_NVIMRC ]; then
     set completion-ignore-case On
     export PATH="$PATH:~/.neovim/nvim-linux-x86_64/bin"
-    export MANPAGER='nvim +Man!'
+    # use nvim as man page reader
+    export MANPAGER='nvim +Man!' 
     alias v=nvim
+
+    # pyenv configuration
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init --path)"
+    eval "$(pyenv virtualenv-init -)"
+    
+    # expo configuration
+    #export PATH="$(yarn global bin):$PATH"
+    export EXPO_EDITOR=nvim
+    export EDITOR=nvim
 fi
 export MY_NVIMRC=~/.config/nvim

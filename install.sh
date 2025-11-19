@@ -19,18 +19,17 @@ if [ -z $MY_NVIMRC ]; then
 fi
 npm i intelephense -g
 
-#bash config 
+# install eclip e pynvim
+sudo apt install python3 xclip -y
+pip install pynvim
+
+# bash config 
 if [ -z $MY_NVIMRC ]; then
     echo "source $NEOVIM_CONFIG/.my_nvimrc > /dev/null" >> ~/.bashrc
     source ~/.bashrc
 fi
 
-# install eclip e pynvim
-sudo apt install python3 xclip -y
-pip install pynvim
-
-
-#nvim install
+# nvim install
 if [[ ! -f $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim ]]
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
     tar -C $NEOVIM_HOME -xzf nvim-linux-x86_64.tar.gz
