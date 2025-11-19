@@ -31,7 +31,7 @@ pip install pynvim
 
 
 #nvim install
-if [ -f $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim ]
+if [[ ! -f $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim ]]
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
     tar -C $NEOVIM_HOME -xzf nvim-linux-x86_64.tar.gz
 fi
