@@ -48,7 +48,7 @@ chown -R $CURRENT_USER:$CURRENT_USER $NEOVIM_HOME $NEOVIM_CONFIG
 # git config
 git config --global user.name "SamuelPatrickMeneses"
 git config --global user.email "samuelmeneses800@gmail.com"
-git config --global commit.template ./.config/nvim/.gittemplate
+git config --global commit.template $NEOVIM_CONFIG/.gittemplate
 git config --global core.editor "$NEOVIM_HOME/nvim-linux-x86_64/bin/nvim"
 
 # instala os plugins do neovim
