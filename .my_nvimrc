@@ -1,5 +1,8 @@
 #!/bin/bash
-set completion-ignore-case On
-export PATH="$PATH:~/.neovim/nvim-linux-x86_64/bin"
-export MANPAGER='nvim +Man!'
-alias v=nvim
+if [ -z $MY_NVIMRC ]; then
+    set completion-ignore-case On
+    export PATH="$PATH:~/.neovim/nvim-linux-x86_64/bin"
+    export MANPAGER='nvim +Man!'
+    alias v=nvim
+fi
+export MY_NVIMRC=~/.config/nvim
