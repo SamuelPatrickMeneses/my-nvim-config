@@ -16,6 +16,8 @@ call plug#begin()
     Plug 'dansomething/coc-groovy'
     Plug 'fannheyward/coc-pyright'
     Plug 'neoclide/coc-snippets'
+    Plug 'josa42/coc-lua'
+    Plug 'fannheyward/coc-rust-analyzer'
     Plug 'preservim/nerdtree'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'Xuyuanp/nerdtree-git-plugin'

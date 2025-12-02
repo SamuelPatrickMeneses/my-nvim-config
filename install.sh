@@ -12,7 +12,7 @@ chmod -R 777 $NEOVIM_HOME $NEOVIM_CONFIG
 cp -r ./init.vim ./install.sh ./coc-settings.json .my_nvimrc .gittemplate $NEOVIM_CONFIG 
 
 #install node
-if [ -z $MY_NVIMRC ]; then
+if [ -z $NVM_DIR ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
     source ~/.bashrc
     nvm install
@@ -29,8 +29,18 @@ if [ -z $MY_NVIMRC ]; then
     source ~/.bashrc
 fi
 
+<<<<<<< HEAD
 # nvim install
 if [[ ! -f $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim ]]
+=======
+# install eclip e pynvim
+sudo apt install python3 xclip -y
+pip install pynvim
+
+
+#nvim install
+if [[ ! -f "$NEOVIM_HOME/nvim-linux-x86_64/bin/nvim" ]]; then
+>>>>>>> 60118a85429cb678a08af92da754f0cc4fbb8574
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
     tar -C $NEOVIM_HOME -xzf nvim-linux-x86_64.tar.gz
 fi
@@ -47,7 +57,7 @@ chown -R $CURRENT_USER:$CURRENT_USER $NEOVIM_HOME $NEOVIM_CONFIG
 # git config
 git config --global user.name "SamuelPatrickMeneses"
 git config --global user.email "samuelmeneses800@gmail.com"
-git config --global commit.template ./.config/nvim/.gittemplate
+git config --global commit.template $NEOVIM_CONFIG/.gittemplate
 git config --global core.editor "$NEOVIM_HOME/nvim-linux-x86_64/bin/nvim"
 
 # instala os plugins do neovim
