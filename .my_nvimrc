@@ -7,9 +7,13 @@ if [ -z $MY_NVIMRC ]; then
     alias v=nvim
 
     # pyenv configuration
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init --path)"
-    eval "$(pyenv virtualenv-init -)"
+    if [ -d "$HOME/.pyenv/bin" ] ; then
+        export PATH="$HOME/.pyenv/bin:$PATH"
+    fi
+    if which pyenv >> /dev/null ; then
+        eval "$(pyenv init --path)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
     
     # expo configuration
     #export PATH="$(yarn global bin):$PATH"
