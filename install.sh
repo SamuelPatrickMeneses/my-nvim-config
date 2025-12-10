@@ -29,18 +29,11 @@ if [ -z $MY_NVIMRC ]; then
     source ~/.bashrc
 fi
 
-<<<<<<< HEAD
-# nvim install
-if [[ ! -f $NEOVIM_HOME/nvim-linux-x86_64/bin/nvim ]]
-=======
-# install eclip e pynvim
-sudo apt install python3 xclip -y
-pip install pynvim
+
 
 
 #nvim install
 if [[ ! -f "$NEOVIM_HOME/nvim-linux-x86_64/bin/nvim" ]]; then
->>>>>>> 60118a85429cb678a08af92da754f0cc4fbb8574
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
     tar -C $NEOVIM_HOME -xzf nvim-linux-x86_64.tar.gz
 fi
