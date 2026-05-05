@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z $MY_NVIMRC ]; then
     set completion-ignore-case On
-    export PATH="$PATH:~/.neovim/nvim-linux-x86_64/bin"
+    export PATH="$PATH:$HOME/.neovim/nvim-linux-x86_64/bin"
     # use nvim as man page reader
     export MANPAGER='nvim +Man!' 
     alias v=nvim
@@ -19,5 +19,5 @@ if [ -z $MY_NVIMRC ]; then
     #export PATH="$(yarn global bin):$PATH"
     export EXPO_EDITOR=nvim
     export EDITOR=nvim
+    export MY_NVIMRC=~/.config/nvim/.my_nvimrc
 fi
-export MY_NVIMRC=~/.config/nvim
