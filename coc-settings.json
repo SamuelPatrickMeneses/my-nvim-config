@@ -4,6 +4,8 @@
   "coc.preferences.enableLinkedEditing": true,
   "colors.enable": false,
   "languageserver": {
+
+    
     "haskell": {
       "command": "haskell-language-server",
       "args": ["--lsp"],
@@ -17,7 +19,16 @@
         }
       }
     },
-     "ccls": {
+
+     "intelephense": {
+         "command": "intelephense",
+         "args": ["--stdio"],
+         "filetypes": ["php"],
+         "initializationOptions": {
+             "storagePath": "/tmp/intelephense"
+         },
+    
+    "ccls": {
          "command": "ccls",
          "filetypes": ["c", "cpp", "objc", "objcpp", "h", "hpp"],
          "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
@@ -35,25 +46,35 @@
                 ]
             }
         }
-     },
-     "intelephense": {
-         "command": "intelephense",
-         "args": ["--stdio"],
-         "filetypes": ["php"],
-         "initializationOptions": {
-             "storagePath": "/tmp/intelephense"
-         }
      }
+
+
+     },
+    "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=${workspaceFolder}",
+        "--log=verbose",  
+        "--pretty"        
+      ]
   },
   "java.imports.gradle.wrapper.checksums": [
-    {
-      "sha256": "76805e32c009c0cf0dd5d206bddc9fb22ea42e84db904b764f3047de095493f3",
-      "allowed": true
-    }
+        {
+          "sha256": "76805e32c009c0cf0dd5d206bddc9fb22ea42e84db904b764f3047de095493f3",
+          "allowed": true
+        }
+      ],
+  "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "~/.sdkman/candidates/java/current",
+        "default": true
+      }
   ],
   "workspace.ignoredFolders": [
     "$HOME",
     "$HOME/.cargo/**",
     "$HOME/.rustup/**"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false,
+  "Lua.misc.executablePath": "~/.lua-lsp/bin/lua-language-server"
 }
