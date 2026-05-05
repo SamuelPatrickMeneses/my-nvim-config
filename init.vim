@@ -13,10 +13,12 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-tsserver'
     Plug 'neoclide/coc-java'
-    Plug 'dansomething/coc-groovy'
+    "Plug 'dansomething/coc-groovy'
     Plug 'fannheyward/coc-pyright'
     Plug 'neoclide/coc-snippets'
     Plug 'josa42/coc-lua'
+    Plug 'romch007/coc-xmake'
+    Plug 'clangd/coc-clangd'
     Plug 'fannheyward/coc-rust-analyzer'
     Plug 'preservim/nerdtree'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -66,6 +68,8 @@ imap <M-z>  :CocList references<CR>
 map <M-i>  <Plug>(coc-implementation)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
+
+autocmd BufRead xmake.lua set filetype=xmake
 
 " Abrir uma nova aba e iniciar um terminal com Alt+T
 "nnoremap <M-t> :tabnew | terminal <CR>
